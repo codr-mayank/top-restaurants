@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Nav />
     <div class="container">
       <h1>Page not found</h1>
       <NuxtLink to="/">Go Back</NuxtLink>
