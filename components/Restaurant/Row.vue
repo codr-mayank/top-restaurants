@@ -1,7 +1,21 @@
+<script setup lang="ts">
+  interface RowProps {
+    index?: number;
+    rank?: number;
+    name?: string;
+    isHeader?: boolean;
+  }
+  const props = defineProps <RowProps> ();
+</script>
+
 <template>
-  <div class="row">
-    <h4 class="header rank">1</h4>
-    <a href="/" class="header link">McDonalds</a>
+  <div class="row" v-if="isHeader">
+    <h4 class="header">Rank</h4>
+    <h4 class="header">Chain</h4>
+  </div>
+  <div v-else class="row" :style="index && !(index % 2) ? { background: 'rgba(128, 128, 128, 0.15)' } : {}">
+    <h4 class="header rank">{{ rank }}</h4>
+    <a :href="`/restaurants/${ name }`" class="header link">{{ name }}</a>
   </div>
 </template>
 
@@ -18,7 +32,7 @@
   margin-right: 2rem;
   padding: 0.5rem 1rem;
   font-weight: 700;
-  width: 4rem;
+  width: auto;
 }
 .rank {
   color: black;
