@@ -9,10 +9,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
+            <NuxtLink :to="'/'" class="nav-link">Home</NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/restaurants">Restaurants</a>
+            <NuxtLink :to="'/restaurants'" class="nav-link">Restaurants</NuxtLink>
           </li>
         </ul>
       </div>
